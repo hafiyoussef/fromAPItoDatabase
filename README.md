@@ -9,5 +9,10 @@
   * Remplir la base de donnée avec l'API.
 
 
-###*image 1 : Voici les données dans l'api 
-[![Capture-d-e-cran-2020-12-16-a-13-05-17.png](https://i.postimg.cc/d39GNBm1/Capture-d-e-cran-2020-12-16-a-13-05-17.png)](https://postimg.cc/dZL7LGfP)
+### image 1 : les données de l'API 
+
+[![Capture-d-e-cran-2020-12-16-a-13-09-11.png](https://i.postimg.cc/0y7PTBKc/Capture-d-e-cran-2020-12-16-a-13-09-11.png)](https://postimg.cc/WdpBrSnk)
+
+### image 2 : la base de données beer 
+
+[![Capture-d-e-cran-2020-12-16-a-12-43-22.png](https://i.postimg.cc/L4ytPyXC/Capture-d-e-cran-2020-12-16-a-12-43-22.png)](https://postimg.cc/pyF5bJKz)
