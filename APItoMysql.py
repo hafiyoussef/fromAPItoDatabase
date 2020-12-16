@@ -4,6 +4,8 @@ import mysql.connector as my
 from mysql.connector import Error
 
 def remplir_table_mysql_from_api(numb):
+    #etape1: 
+    #dict des données 
     id_beer=data_json[numb].get('id',None)
     name=data_json[numb].get('name',None)
     tagline=data_json[numb].get('tagline',None)
@@ -30,11 +32,15 @@ def remplir_table_mysql_from_api(numb):
     food_pairing=data_json[numb].get('food_pairing',None)
     contributed_by=data_json[numb].get('contributed_by',None)
     try:
+        #connection à la base de données 
         con=my.connect(host='localhost',user='root',passwd='PutYourPassword',db='db')
         cursor=con.cursor()
+        #requette sql d'insertion
         sql_query=("insert into beer values({},'{}','{}','{}','{}','{}',{},{},{},{},{},{},{},{},'{}',{},'{}','{}');".format(id_beer,name,tagline,first_brewed,description,image_url,abv,ibu,target_fg,target_og,ebc,srm,ph,attenuation_level,volume_unit,volume_value,description,contributed_by))
         cursor.execute(sql_query)
+        #on commit le changement 
         con.commit()
+        #au cas ou on recontre une erreur
     except Error as e:
         print(e)
     cursor.close()
@@ -44,7 +50,9 @@ def remplir_table_mysql_from_api(numb):
 
 
 if __name__ == "__main__":
+    #obtenir les données de l'API avec la méthode get 
     r = requests.get('https://api.punkapi.com/v2/beers')
+    #on transforme les données en format json 
     data_json=r.json()
     #print(data_json)
     for numb in range(0,24):
