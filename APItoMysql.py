@@ -30,7 +30,7 @@ def remplir_table_mysql_from_api(numb):
     food_pairing=data_json[numb].get('food_pairing',None)
     contributed_by=data_json[numb].get('contributed_by',None)
     try:
-        con=my.connect(host='localhost',user='root',passwd='Zarzis92',db='db')
+        con=my.connect(host='localhost',user='root',passwd='PutYourPassword',db='db')
         cursor=con.cursor()
         sql_query=("insert into beer values({},'{}','{}','{}','{}','{}',{},{},{},{},{},{},{},{},'{}',{},'{}','{}');".format(id_beer,name,tagline,first_brewed,description,image_url,abv,ibu,target_fg,target_og,ebc,srm,ph,attenuation_level,volume_unit,volume_value,description,contributed_by))
         cursor.execute(sql_query)
